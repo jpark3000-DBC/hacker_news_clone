@@ -1,0 +1,16 @@
+
+  <h3><a href='<%= @post.url %>'><%=@post.title%></a></h3>
+    <form method='POST' action='/comment'>
+      <textarea name='content' rows="10" cols="50">
+
+      </textarea><br>
+     <input hidden name='post_id' value="<%=@post.id%>">
+      <input type='submit' value='submit'>
+    </form>
+  <% @comments.each do |comment| %>
+    <div class='post'>
+      <p><%=comment.user.user_name%></p>
+      <p><%=comment.content%><p>
+    </div>
+  <% end%>
+

@@ -1,1 +1,25 @@
-<h1>success</h1>
+<h1><%= @user.user_name %></h1>
+
+<h4>All posts</h4>
+
+<% if @user.posts.any? %>
+  <% @user.posts.reverse_each do |post| %>
+    <div class='post'>
+      <a class='title' href="<%=post.url%>"><%= post.title%></a>
+      <a class='comments' href="/post?post_id=<%= post.id %>"><%= post.comments.count %> comments</a>
+    </div>
+  <% end %>
+<% end %>
+
+
+
+<h4> All comments</h4>
+
+<% if @user.comments %>
+  <% @user.comments.reverse_each do |comment| %>
+    <div class='post'>
+      <a class='title' href="<%=comment.post.url%>"><%= comment.post.title%></a>
+      <a href="/post?post_id=<%= comment.post.id %>"><%= comment.content %></a>
+    </div>
+  <% end %>
+<% end %>

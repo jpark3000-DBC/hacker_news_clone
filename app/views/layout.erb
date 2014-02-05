@@ -18,11 +18,18 @@
   <title></title>
 </head>
 <body>
-  <div id='navbar'>
-    <p><a href='/login'>login</a></p>
-    <p><a href='/create_post'>create</a></p>
-    <p><a href='/logout'>logout</a></p>
-  </div>
-  <%= yield %>
+  <div class='container'>
+    <div id='navbar'>
+      <p><a href='/'>home</a></p>
+      <% if session[:user_id].nil? %>
+        <p><a href='/login'>login</a></p>
+      <% else %>
+        <p><a href='/logout'>logout</a></p>
+      <% end %>
+      <p><a href='/create_post'>create</a></p>
+      <p><a href='/profile'>profile</a></p>
+    </div>
+    <%= yield %>
+</div>
 </body>
 </html>

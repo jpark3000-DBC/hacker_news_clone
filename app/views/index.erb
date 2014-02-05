@@ -1,13 +1,14 @@
-<div class="container">
+
 
 
   <% if @posts %>
     <% @posts.reverse_each do |post| %>
-      <a href="<%=post.url%>"><%= post.title%></a>
-      <p><a href="/post?post_id=<% post.id %>"><%= post.comments.count %> comments</a></p>
+    <div class='post'>
+      <a class='title' href="<%=post.url%>"><%= post.title%></a>
+      <a class='comments' href="/post?post_id=<%= post.id %>"><%= post.comments.count %> comments</a>
+    </div>
     <% end %>
   <% end %>
 
 
 
-</div>

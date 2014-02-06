@@ -1,7 +1,10 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+   $('.arrow').click(function(event){
+    var tar = $(event.target)
+      var id = tar.data('id')
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+      $.post('/add_post_vote', {id:id}, function(votes){
+          tar.html(votes)
+      })
+   })
 });

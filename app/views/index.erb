@@ -6,6 +6,7 @@
     <div class='post'>
       <a class='title' href="<%=post.url%>"><%= post.title%></a>
       <a class='comments' href="/post?post_id=<%= post.id %>"><%= post.comments.count %> comments</a>
+      <p data-id='<%= post.id %>' class='arrow'><%=post.votes%>▲</p>
     </div>
     <% end %>
   <% end %>

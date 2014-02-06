@@ -1,4 +1,8 @@
-
+<% if @message %>
+    <% @message.each do |message| %>
+        <p><%= message %></p>
+    <% end %>
+<% end %>
 
 
     <br>

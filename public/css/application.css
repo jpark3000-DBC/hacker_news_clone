@@ -27,22 +27,24 @@ th {
 .post:nth-of-type(even) {
     background-color: white;
 }
-
-.post{
+.post {
     width: 100%;
     min-height: 40px;
 }
-
 .title {
-  display: block;
-  font-size: 20px;
+    display: block;
+    font-size: 20px;
 }
-
 .comments {
-  font-size: 12px;
+    font-size: 12px;
 }
-
 .post > a {
-  text-decoration: none;
-  color: black;
+    text-decoration: none;
+    color: black;
+}
+.arrow {
+    display: block;
+    width: 20px;
+    text-align: center;
+    cursor: pointer;
 }
